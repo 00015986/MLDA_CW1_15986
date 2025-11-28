@@ -1,4 +1,5 @@
 ## Student Dropout / Academic Success Prediction
+```
 Python: 3.11.10
 Conda: 24.11.3
 </b>
@@ -37,4 +38,4 @@ If you want to clone and run the project locally, follow these steps:
 <code>git clone https://github.com/00015986/MLDA_CW1_15986.git</code>
 <code>cd MLDA_CW1_15986</code>
 </b>
-
+```
