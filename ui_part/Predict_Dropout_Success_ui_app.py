@@ -26,7 +26,7 @@ sf_path_knn = os.path.join(repo_root, "src", "saved_features", "knn_selected_fea
 
 # Page titles and layouts
 st.set_page_config(page_title="Student Outcome Predictor", layout="centered")
-st.title("Student Dropout / Success Predictor (RF | KNN)")
+st.title("Student Dropout and Success Predictor RF | KNN")
 
 # Class labeling
 label_map = {0: "Dropout", 1: "Enrolled", 2: "Graduate"}
