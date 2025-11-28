@@ -2,6 +2,21 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import os
+
+# Taking the directory of streamlit  file like ui_part/
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# getting the repo root by going one level up
+repo_root = os.path.dirname(current_dir)
+
+# Building path to the models and selected features' files
+model_path_rf = os.path.join(repo_root, "src", "saved_models", "random_forest.pkl")
+model_path_knn = os.path.join(repo_root, "src", "saved_models", "knn_model.pkl")
+model_path_scaler = os.path.join(repo_root, "src", "saved_models", "knn_scaler.pkl")
+
+sf_path_rf = os.path.join(repo_root, "src", "saved_features", "rf_selected_features.pkl")
+sf_path_knn = os.path.join(repo_root, "src", "saved_features", "knn_selected_features.pkl")
 
 # Page titles and layouts
 st.set_page_config(page_title="Student Outcome Predictor", layout="centered")
@@ -12,18 +27,17 @@ label_map = {0: "Dropout", 1: "Enrolled", 2: "Graduate"}
 
 # Loading the trained models and scaler
 # Random Forest model
-rf_model = joblib.load("src/saved_models/random_forest.pkl")
+rf_model = joblib.load(model_path_rf)
 
 # KNN model
-knn_model = joblib.load("src/saved_models/knn_model.pkl")
+knn_model = joblib.load(model_path_knn)
 
 # Scaler needed for KNN because KNN uses scaled data
-scaler = joblib.load("src/saved_models/knn_scaler.pkl")
+scaler = joblib.load(model_path_scaler)
 
 # Selected features used by Random Forest and KNN
-sf_rf = joblib.load("src/saved_features/rf_selected_features.pkl")
-sf_knn = joblib.load("src/saved_features/knn_selected_features.pkl")
-
+sf_rf = joblib.load(sf_path_rf)
+sf_knn = joblib.load(sf_path_knn)
 
 # Dictionaries that convert human text to numeric ML values
 # These make the UI friendly so users do not enter numbers
