@@ -6,8 +6,7 @@ import os
 
 # getting the repo root by going 2 level up
 current_file = os.path.abspath(__file__)
-parent_dir = os.path.dirname(os.path.dirname(current_file))
-repo_root = os.path.join(parent_dir, "mlda_cw1_15986")
+repo_root = os.path.dirname(os.path.dirname(current_file))
 
 # Building path to the models and selected features' files
 model_path_rf = os.path.join(repo_root, "src", "saved_models", "random_forest.pkl")
