@@ -13,6 +13,10 @@ repo_root = os.path.dirname(os.path.dirname(current_file))
 rf_url = "https://drive.google.com/uc?export=download&id=189lN398z-OuPtzE0eXu8IUAUodzhM1ZX"
 model_path_rf = "random_forest.pkl"
 
+# it should be downloaded if not exists
+if not os.path.exists(rf_local):
+    urllib.request.urlretrieve(rf_url, rf_local)
+
 # Building path to the models and selected features' files
 model_path_knn = os.path.join(repo_root, "src", "saved_models", "knn_model.pkl")
 model_path_scaler = os.path.join(repo_root, "src", "saved_models", "knn_scaler.pkl")
