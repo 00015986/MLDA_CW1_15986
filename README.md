@@ -1,2 +1,6 @@
-# MLDA_CW1_15986
-The project is mainly covering my personal coursework project, and I chose the topic "Predecting Students' Droupout and Academic Success dataset".
+## Student Dropout / Academic Success Prediction
+Python: 3.11.10
+Conda: 24.11.3
+</b>
+sd
+ds
