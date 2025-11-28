@@ -7,8 +7,8 @@ import os
 # Taking the directory of streamlit  file like ui_part/
 current_dir = os.path.dirname(os.path.abspath(__file__))
 
-# getting the repo root by going one level up
-repo_root = os.path.dirname(current_dir)
+# getting the repo root by going 2 level up
+repo_root = os.path.dirname(os.path.dirname(current_dir))
 
 # Building path to the models and selected features' files
 model_path_rf = os.path.join(repo_root, "src", "saved_models", "random_forest.pkl")
