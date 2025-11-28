@@ -4,11 +4,10 @@ import pandas as pd
 import joblib
 import os
 
-# Taking the directory of streamlit  file like ui_part/
-current_dir = os.path.dirname(os.path.abspath(__file__))
-
 # getting the repo root by going 2 level up
-repo_root = os.path.dirname(os.path.dirname(current_dir))
+current_file = os.path.abspath(__file__)
+parent_dir = os.path.dirname(os.path.dirname(current_file))
+repo_root = os.path.join(parent_dir, "mlda_cw1_15986")
 
 # Building path to the models and selected features' files
 model_path_rf = os.path.join(repo_root, "src", "saved_models", "random_forest.pkl")
